@@ -1,0 +1,75 @@
+/*
+ * Design-system tokens. Components reference these CSS custom properties only —
+ * never hard-coded colors. Light is default; [data-theme="dark"] overrides.
+ *
+ * Series colors come from the Okabe–Ito colorblind-safe palette
+ * (https://jfly.uni-koeln.de/color/). Bright hues are reserved for plotted
+ * lines/marks; text uses the higher-contrast variants for WCAG-AA.
+ */
+
+:root {
+  /* surfaces & text */
+  --bg: #f7f8fa;
+  --surface: #ffffff;
+  --surface-2: #eef1f5;
+  --border: #d8dee6;
+  --border-strong: #b9c2cf;
+  --text: #1a2230;
+  --text-muted: #586173;
+  --text-faint: #828c9c;
+  --accent: #0072b2;
+  --accent-text: #005c90;
+  --accent-soft: #e3eef6;
+  --shadow: 0 1px 2px rgba(20, 30, 50, 0.06), 0 4px 16px rgba(20, 30, 50, 0.06);
+
+  /* plotted-series palette (Okabe–Ito) */
+  --series-1: #0072b2; /* blue */
+  --series-2: #d55e00; /* vermillion */
+  --series-3: #009e73; /* bluish green */
+  --series-4: #cc79a7; /* reddish purple */
+  --series-5: #e69f00; /* orange */
+  --series-6: #56b4e9; /* sky blue */
+  --series-7: #8a6d3b; /* warm brown (gradient/aux) */
+
+  /* plot chrome */
+  --grid: #e2e7ee;
+  --axis: #9aa4b2;
+  --plot-bg: #ffffff;
+
+  /* spacing / radius / type */
+  --radius: 10px;
+  --radius-sm: 6px;
+  --maxw: 1180px;
+  --sidebar-w: 248px;
+  --font: "Pretendard", "Pretendard Variable", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", "Apple SD Gothic Neo", "Noto Sans KR",
+    sans-serif;
+  --mono: "SFMono-Regular", ui-monospace, "JetBrains Mono", Menlo, Consolas, monospace;
+}
+
+[data-theme="dark"] {
+  --bg: #0e1320;
+  --surface: #161d2e;
+  --surface-2: #1d2740;
+  --border: #2a3550;
+  --border-strong: #3a4868;
+  --text: #e8edf6;
+  --text-muted: #a3afc4;
+  --text-faint: #7682a0;
+  --accent: #56b4e9;
+  --accent-text: #8fd0f5;
+  --accent-soft: #163047;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.35);
+
+  --series-1: #56b4e9; /* sky blue */
+  --series-2: #e69f00; /* orange */
+  --series-3: #009e73; /* bluish green */
+  --series-4: #cc79a7; /* reddish purple */
+  --series-5: #f0e442; /* yellow */
+  --series-6: #0091e0; /* blue (brighter) */
+  --series-7: #c9a978; /* warm tan */
+
+  --grid: #243049;
+  --axis: #54627e;
+  --plot-bg: #121a29;
+}
