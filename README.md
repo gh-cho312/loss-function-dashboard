@@ -64,10 +64,26 @@ src/
   styles/     tokens.css(디자인 토큰), global.css
 ```
 
-## 배포 (선택)
+## 배포
 
-`vite.config.ts`의 `base: './'` 덕분에 `dist/`를 GitHub Pages 등 어느 하위 경로에든
-그대로 올릴 수 있습니다.
+🔗 **Live:** https://gh-cho312.github.io/loss-function-dashboard/
+
+GitHub Pages **deploy-from-branch** 방식으로 배포합니다(빌드 결과를 `gh-pages`
+브랜치에 올리고, Pages 소스를 그 브랜치로 지정). 소스는 `main`, 배포물은 `gh-pages`로
+분리됩니다. `vite.config.ts`의 `base: './'` 덕분에 프로젝트 하위 경로(`/loss-function-dashboard/`)
+에서도 자산 경로가 올바르게 해석됩니다.
+
+### 사이트 갱신(재배포)
+
+```bash
+npm run deploy
+```
+
+이 스크립트는 `npm run build` 후 `dist/`(+ `.nojekyll`)를 `gh-pages` 브랜치로
+force-push 합니다. main에 푸시한다고 자동 배포되지는 않습니다(토큰에 `workflow`
+스코프가 없어 Actions 워크플로는 제외함). 자동 배포가 필요하면
+`gh auth refresh -s workflow` 후 `.github/workflows/deploy.yml`(Actions → Pages)을
+다시 추가하면 됩니다.
 
 ## 설계 문서
 
